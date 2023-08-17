@@ -71,8 +71,8 @@
 							<div class="profile-thumb" style="background: url(images/user-3.jpg);"></div>
 							<h1><span>Pratham Agarwal</span></h1>
 							<h3><span>Data Scientist\ML Researcher\Quantitative Researcher</span></h3>
-							<button type="button" class="mt-4 btn btn-primary btn-floating">
-								<i class="icon-download3"><span>Get Resume</span></i>
+							<button type="button" class="mt-4 btn btn-primary btn-floating" id='ResumedownloadButton'>
+								<i class="icon-download3"></i><span class="m-4">Get Resume</span>
 							</button>
 							<p>
 								<ul class="fh5co-social-icons">
@@ -548,7 +548,21 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
 	</div>
-	
+	<script>
+        document.getElementById("ResumedownloadButton").addEventListener("click", function() {
+            // Replace 'path_to_your_pdf.pdf' with the actual path to your PDF file
+            var pdfPath = 'files/Pratham_Agarwala_2023.pdf';
+            
+            // Creating a hidden anchor element to trigger the download
+            var link = document.createElement('a');
+            link.href = pdfPath;
+            link.target = '_blank';  // Open in a new tab/window
+            link.download = 'Pratham Agarwala Resume.pdf';  // Rename the downloaded file
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
